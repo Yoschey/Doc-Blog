@@ -14,10 +14,12 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Resources',
         items: [
           { text: 'Markdown Examplinos', link: '/markdown-examples' },
-          { text: 'Runtime API Examplion', link: '/api-examples' }
+          { text: 'Runtime API Examplion', link: '/api-examples' },
+          { text: 'Vim Keybindings', link: '/vim_keybindings' },
+          { text: 'Tmux Keybindings', link: '/tmux_keybindings' }
         ]
       }
     ],
