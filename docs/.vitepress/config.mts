@@ -25,7 +25,8 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/Yoschey' },
+      { icon: 'x', link: 'https://github.com/Yoschey/dotfiles' }
     ]
   }
 })
