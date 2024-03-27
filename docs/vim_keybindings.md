@@ -35,3 +35,6 @@
 - `:q` - Vim verlassen
 - `:wq` oder `:x` - Speichern und verlassen
 - `:q!` - Ohne zu speichern verlassen
+
+
+Hallo !
