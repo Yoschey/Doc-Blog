@@ -20,7 +20,8 @@ export default defineConfig({
           { text: 'Runtime API Examplion', link: '/api-examples' },
           { text: 'Vim Keybindings', link: '/vim_keybindings' },
           { text: 'Tmux Keybindings', link: '/tmux_keybindings' },
-          { text: 'Singeltons', link: '/Singelton' }
+          { text: 'Singeltons', link: '/Singelton' },
+          { text: 'Dependency Injection', link: '/Dependency-Injection' }
         ]
       }
     ],
