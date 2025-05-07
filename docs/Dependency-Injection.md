@@ -102,6 +102,6 @@ public class Startup
 Now, whenever OrderService is requested, the DI container automatically injects an instance of ConsoleLogger for the ILogger dependency.
 
 ## Summary
-	•	Dependency Injection allows you to inject dependencies into classes, promoting loose coupling and making your code more maintainable and testable.
-	•	It helps centralize configuration and integrates seamlessly into the .NET Core DI container.
-	•	Using DI, you can focus on developing functionality without worrying about managing object creation and lifecycle.
+-	Dependency Injection allows you to inject dependencies into classes, promoting loose coupling and making your code more maintainable and testable.
+-	It helps centralize configuration and integrates seamlessly into the .NET Core DI container.
+-	Using DI, you can focus on developing functionality without worrying about managing object creation and lifecycle.
