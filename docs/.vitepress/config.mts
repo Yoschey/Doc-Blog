@@ -14,15 +14,44 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Resources',
+        text: 'Allgemeines',
         items: [
           { text: 'Markdown Examplinos', link: '/markdown-examples' },
           { text: 'Runtime API Examplion', link: '/api-examples' },
+
+
+        ]
+      },
+      {
+        text: 'Shell',
+        items: [
           { text: 'Vim Keybindings', link: '/vim_keybindings' },
           { text: 'Tmux Keybindings', link: '/tmux_keybindings' },
-          { text: 'Singeltons', link: '/Singelton' }
+          { text: 'Vim Motion Test', link: '/vim-motion-test' },
         ]
-      }
+      },
+      {
+        text: 'Konzepte',
+        items: [
+          { text: 'Singeltons', link: '/Singelton' },
+          { text: 'Dependency Injection', link: '/Dependency-Injection' }
+        ]
+      },
+      {
+        text: 'C#',
+        items: [
+          { text: 'Item C', link: '/' },
+          { text: 'Item D', link: '/' },
+          { text: 'Item E', link: '/' }
+        ]
+      },
+      {
+        text: 'Sinnloser Kram',
+        items: [
+          { text: 'Ultra Violet', link: '/PokemonUltraViolet' },
+          { text: 'Rugby Teams', link: '/rugby' },
+        ]
+      },
     ],
 
     socialLinks: [

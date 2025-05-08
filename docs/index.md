@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Yoschey Dev Docs"
   text: "Just a Playground to test. But also nice."
-  tagline: My Code and Docs.
+  tagline: Some Docs I have.
   actions:
     - theme: brand
       text: Markdown Examples
