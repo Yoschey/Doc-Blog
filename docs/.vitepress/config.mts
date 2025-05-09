@@ -49,7 +49,8 @@ export default defineConfig({
         text: 'Sinnloser Kram',
         items: [
           { text: 'Ultra Violet', link: '/PokemonUltraViolet' },
-          { text: 'Rugby Teams', link: '/rugby' },
+          { text: 'Rugby Josh', link: '/rugby' },
+          { text: 'Rugby Teams', link: '/rugby-teams' },
         ]
       },
     ],
