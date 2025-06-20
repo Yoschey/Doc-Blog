@@ -23,11 +23,12 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Shell',
+        text: 'Linux',
         items: [
           { text: 'Vim Keybindings', link: '/vim_keybindings' },
           { text: 'Tmux Keybindings', link: '/tmux_keybindings' },
           { text: 'Vim Motion Test', link: '/vim-motion-test' },
+          { text: 'Unix Tools', link: '/Unix-Tools' },
         ]
       },
       {
@@ -38,11 +39,11 @@ export default defineConfig({
         ]
       },
       {
-        text: 'C#',
+        text: 'Powershell',
         items: [
-          { text: 'Item C', link: '/' },
-          { text: 'Item D', link: '/' },
-          { text: 'Item E', link: '/' }
+          { text: 'DevOps Kram', link: '/Daily-DevOps' },
+          { text: 'Powershell Basic', link: '/Basic-Powershell' },
+          { text: 'Powershell Advanced', link: '/Powershell-Fortgeschrittene' }
         ]
       },
       {
