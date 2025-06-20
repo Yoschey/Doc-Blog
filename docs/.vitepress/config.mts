@@ -42,7 +42,7 @@ export default defineConfig({
         text: 'Powershell',
         items: [
           { text: 'DevOps Kram', link: '/Daily-DevOps' },
-          { text: 'Powershell Basic', link: '/Basic-Powershell' },
+          { text: 'Powershell Basic', link: '/Basis-Powershell' },
           { text: 'Powershell Advanced', link: '/Powershell-Fortgeschrittene' }
         ]
       },
