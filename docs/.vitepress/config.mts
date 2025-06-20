@@ -18,7 +18,7 @@ export default defineConfig({
         items: [
           { text: 'Markdown Examplinos', link: '/markdown-examples' },
           { text: 'Runtime API Examplion', link: '/api-examples' },
-          { text: 'Unix Tools', link: '/Unix-Tools' },
+
 
         ]
       },
