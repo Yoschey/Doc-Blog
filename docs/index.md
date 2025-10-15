@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "Yoschey Dev Docs"
-  text: "Just a Playground to test. But also nice. Its like HOME, my Garage. Smoke a Pipe and sip a Whisky with me here"
-  tagline: Some Docs I have.
+  text: "Things for me to play"
+  tagline: Just a Playground to test. But also nice. Its like HOME, my Garage. Smoke a Pipe and sip a Whisky with me here.
   actions:
     - theme: brand
       text: To the Content Start
