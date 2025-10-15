@@ -23,6 +23,7 @@ export default defineConfig({
           { text: 'Smoke Test', link: '/smoketest' },
           { text: 'PowerShell Kurs', link: '/powershell-kurs' },
           { text: 'Azure DevOps Kurs', link: '/azuredevops-kurs' },
+          { text: 'Was ist eine Checksumme', link: '/checksum' },
 
         ]
       },
