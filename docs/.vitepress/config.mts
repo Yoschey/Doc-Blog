@@ -18,7 +18,11 @@ export default defineConfig({
         items: [
           { text: 'Markdown Examplinos', link: '/markdown-examples' },
           { text: 'Runtime API Examplion', link: '/api-examples' },
-
+          { text: 'Pocketbase vs. SQLite', link: '/PBvSQLite' },
+          { text: 'YAML Guide', link: '/yaml' },
+          { text: 'Smoke Test', link: '/smoketest' },
+          { text: 'PowerShell Kurs', link: '/powershell-kurs' },
+          { text: 'Azure DevOps Kurs', link: '/azuredevops-kurs' },
 
         ]
       },
