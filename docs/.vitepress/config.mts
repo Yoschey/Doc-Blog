@@ -29,6 +29,7 @@ export default defineConfig({
           { text: 'Was ist eine Checksumme', link: '/checksum' },
           { text: 'Proxy', link: '/proxy' },
           { text: 'Windows Proxy', link: '/win-proxy' },
+          { text: 'Gruppenrichtlinien', link: '/gpo' },
 
         ]
       },
