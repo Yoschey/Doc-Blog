@@ -56,13 +56,26 @@ export default defineConfig({
           { text: 'Powershell Basic', link: '/Basis-Powershell' },
           { text: 'Powershell Advanced', link: '/Powershell-Fortgeschrittene' }
         ]
+      },{
+        text: 'Bücher',
+        items: [
+          { text: 'Übersicht', link: '/books/overview' },
+          { text: 'Ansible', link: '/books/Ansible_Up_and_Running_Summary' },
+          { text: 'DevObs for Dummies', link: '/books/DevOps_for_Dummies_Summary' },
+          { text: 'Effective DevOps', link: '/books/Effective_DevOps_Summary' },
+          { text: 'GitOps Cookbook', link: '/books/GitOps_Cookbook_Summary' },
+          { text: 'DevSecOps', link: '/books/Learning_DevSecOps_Summary' },
+          { text: 'PowerShell for Sysadmins', link: '/books/PowerShell_for_Sysadmins_Summary' },
+          { text: 'PowerShell Pocketreference', link: '/books/PowerShell_Pocket_Reference_Summary' },
+          { text: 'Python for DevOps', link: '/books/Python_for_DevOps_Summary' },
+
+
+        ]
       },
       {
         text: 'Sinnloser Kram',
         items: [
-          { text: 'Ultra Violet', link: '/PokemonUltraViolet' },
           { text: 'Rugby Josh', link: '/rugby' },
-          { text: 'Rugby Teams', link: '/rugby-teams' },
         ]
       },
     ],
