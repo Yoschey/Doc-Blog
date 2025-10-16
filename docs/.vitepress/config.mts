@@ -27,6 +27,8 @@ export default defineConfig({
           { text: 'PowerShell Kurs', link: '/powershell-kurs' },
           { text: 'Azure DevOps Kurs', link: '/azuredevops-kurs' },
           { text: 'Was ist eine Checksumme', link: '/checksum' },
+          { text: 'Proxy', link: '/proxy' },
+          { text: 'Windows Proxy', link: '/win-proxy' },
 
         ]
       },
