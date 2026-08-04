@@ -8,23 +8,26 @@ hero:
   tagline: Just a Playground to test. But also nice. Its like HOME, my Garage. Smoke a Pipe and sip a Whisky with me here.
   actions:
     - theme: brand
-      text: To the Content Start
-      link: /markdown-examples
+      text: Inhalte entdecken
+      link: /Daily-DevOps
 
 features:
-  - title: Allgemeines
-    details: Start der Sektion Allgemeins. Hier pack ich alles rein was sonst nicht passt oder ich einfach keine Lust habe es zu sortieren
-    link: /markdown-examples
-  - title: Linux
-    details: Sachen rund um das beste Betriebsystem und die Shell
-    link: /vim_keybindings
-  - title: Konzepte
-    details: Code Konzepte die ich mir mal aufgeschrieben habe.
-    link: /Singelton
-  - title: PowerShell
-    details: Alles Rund um die PowerShell was ich gesammelt habe 
+  - title: DevOps
+    details: Automatisierung, Azure DevOps, YAML, Smoke Tests und weitere Werkzeuge für den täglichen Workflow.
     link: /Daily-DevOps
-  - title: Misc.
-    details: Kram der nicht wirklich produktiv ist den ich irgendwo griffbereit haben will aus Gründen die ich selbst nicht mehr weiß. Lassen wir es hier wohnen bis es in den Müllschlucker kommt 
-    link: /PokemonUltraViolet
+  - title: Windows & PowerShell
+    details: PowerShell-Kurse, Windows-Konfiguration, Gruppenrichtlinien und Proxy-Themen.
+    link: /powershell-kurs
+  - title: Linux & CLI
+    details: Unix-Tools sowie Vim- und Tmux-Referenzen für die Kommandozeile.
+    link: /Unix-Tools
+  - title: Entwicklungskonzepte
+    details: Notizen zu Dependency Injection, Singleton und weiteren Software-Konzepten.
+    link: /Dependency-Injection
+  - title: Bücher
+    details: Zusammenfassungen und Notizen zu DevOps-, PowerShell- und Automatisierungsbüchern.
+    link: /books/overview
+  - title: Freizeit
+    details: Rugby und andere Themen, die außerhalb der technischen Dokumentation ihren Platz haben.
+    link: /rugby-teams
 ---
