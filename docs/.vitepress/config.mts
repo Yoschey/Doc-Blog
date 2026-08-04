@@ -1,11 +1,23 @@
 import { defineConfig } from 'vitepress'
+import { nav, sidebar } from './navigation'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Yoschey Dev Docs",
-  description: "Just a Playground to test. But also nice. Its like HOME, my Garage. Smoke a Pipe and sip a Whisky with me here ",
+  lang: 'de-DE',
+  title: 'Yoschey Dev Garage',
+  titleTemplate: ':title | Yoschey Dev Garage',
+  description: 'Praxiswissen, Runbooks und Notizen zu DevOps, PowerShell, Linux, Softwarearchitektur und Security.',
   base: '/Doc-Blog/',
-  // Keep existing public URLs stable while organizing source files by topic.
+  lastUpdated: true,
+  head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/Doc-Blog/logo.svg' }],
+    ['meta', { name: 'theme-color', content: '#0f766e' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: 'Yoschey Dev Garage' }]
+  ],
+  sitemap: {
+    hostname: 'https://yoschey.github.io/Doc-Blog/'
+  },
+  // Existing bookmarks stay valid although the source files are grouped by topic.
   rewrites: {
     'concepts/Dependency-Injection.md': 'Dependency-Injection.md',
     'concepts/Singelton.md': 'Singelton.md',
@@ -32,88 +44,39 @@ export default defineConfig({
     'windows/win-proxy.md': 'win-proxy.md'
   },
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
-    ],
+    logo: '/logo.svg',
+    siteTitle: 'Dev Garage',
+    nav,
+    sidebar,
     search: {
       provider: 'local'
     },
-
-    sidebar: [
-      {
-        text: 'DevOps',
-        items: [
-          { text: 'Daily DevOps', link: '/Daily-DevOps' },
-          { text: 'Azure DevOps Kurs', link: '/azuredevops-kurs' },
-          { text: 'YAML Guide', link: '/yaml' },
-          { text: 'Checksummen', link: '/checksum' },
-          { text: 'Proxy', link: '/proxy' },
-          { text: 'Smoke Tests', link: '/smoketest' },
-          { text: 'PocketBase vs. SQLite', link: '/PBvSQLite' }
-        ]
-      },
-      {
-        text: 'Windows & PowerShell',
-        items: [
-          { text: 'PowerShell für DevOps', link: '/powershell-kurs' },
-          { text: 'PowerShell Grundlagen', link: '/Basis-Powershell' },
-          { text: 'PowerShell Fortgeschritten', link: '/Powershell-Fortgeschrittene' },
-          { text: 'Windows Proxy', link: '/win-proxy' },
-          { text: 'Gruppenrichtlinien', link: '/gpo' }
-        ]
-      },
-      {
-        text: 'Linux & CLI',
-        items: [
-          { text: 'Unix Tools', link: '/Unix-Tools' },
-          { text: 'Vim Keybindings', link: '/vim_keybindings' },
-          { text: 'Tmux Keybindings', link: '/tmux_keybindings' },
-          { text: 'Vim Motion Test', link: '/vim-motion-test' }
-        ]
-      },
-      {
-        text: 'Entwicklungskonzepte',
-        items: [
-          { text: 'Dependency Injection', link: '/Dependency-Injection' },
-          { text: 'Singleton Pattern', link: '/Singelton' }
-        ]
-      },
-      {
-        text: 'Beispiele',
-        items: [
-          { text: 'Markdown', link: '/markdown-examples' },
-          { text: 'Runtime API', link: '/api-examples' }
-        ]
-      },
-      {
-        text: 'Bücher',
-        items: [
-          { text: 'Übersicht', link: '/books/overview' },
-          { text: 'Ansible', link: '/books/Ansible_Up_and_Running_Summary' },
-          { text: 'DevObs for Dummies', link: '/books/DevOps_for_Dummies_Summary' },
-          { text: 'Effective DevOps', link: '/books/Effective_DevOps_Summary' },
-          { text: 'GitOps Cookbook', link: '/books/GitOps_Cookbook_Summary' },
-          { text: 'DevSecOps', link: '/books/Learning_DevSecOps_Summary' },
-          { text: 'PowerShell for Sysadmins', link: '/books/PowerShell_for_Sysadmins_Summary' },
-          { text: 'PowerShell Pocketreference', link: '/books/PowerShell_Pocket_Reference_Summary' },
-          { text: 'Python for DevOps', link: '/books/Python_for_DevOps_Summary' }
-        ]
-      },
-      {
-        text: 'Freizeit',
-        items: [
-          { text: 'Rugby Wettbewerbe', link: '/rugby' },
-          { text: 'Rugby Teams', link: '/rugby-teams' },
-          { text: 'Pokémon Ultra Violet', link: '/PokemonUltraViolet' }
-        ]
-      },
-    ],
-
+    outline: {
+      level: [2, 3],
+      label: 'Auf dieser Seite'
+    },
+    editLink: {
+      pattern: 'https://github.com/Yoschey/Doc-Blog/edit/main/docs/:path',
+      text: 'Diese Seite auf GitHub bearbeiten'
+    },
+    lastUpdated: {
+      text: 'Zuletzt aktualisiert',
+      formatOptions: {
+        dateStyle: 'medium',
+        timeStyle: 'short'
+      }
+    },
+    docFooter: {
+      prev: 'Vorherige Seite',
+      next: 'Nächste Seite'
+    },
+    footer: {
+      message: 'Notizen aus der Dev Garage – zum Lernen, Nachschlagen und Weiterbauen.',
+      copyright: 'Inhalte unter eigener Verantwortung testen.'
+    },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/Yoschey' },
-      { icon: 'x', link: 'https://github.com/Yoschey/dotfiles' }
+      { icon: 'github', link: 'https://github.com/Yoschey/Doc-Blog' },
+      { icon: 'github', link: 'https://github.com/Yoschey' }
     ]
   }
 })
