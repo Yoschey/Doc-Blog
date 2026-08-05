@@ -1,5 +1,23 @@
-# Learning DevSecOps – Detailed Summary
+---
+title: "Learning DevSecOps – Zusammenfassung"
+description: Security-Praktiken im Entwicklungs-, Build- und Auslieferungsprozess einordnen.
+learning:
+  level: Vertiefung
+  duration: 30–45 Minuten
+  goals:
+    - die Kernaussagen des Buchs strukturiert wiedergeben.
+    - Empfehlungen auf den eigenen Arbeitskontext übertragen.
+    - versionsabhängige Aussagen mit Primärdokumentation abgleichen.
+  terms: [DevSecOps, Pipeline, Security, Supply Chain]
+  practice: Wähle eine Empfehlung aus der Zusammenfassung, formuliere ihren erwarteten Nutzen und prüfe sie in einem kleinen Lab oder anhand eines bestehenden Teamprozesses.
+  next: /security/cicd-security
+---
 
+# Learning DevSecOps – Zusammenfassung
+
+::: info Einordnung für Azubis
+Diese Zusammenfassung verwendet teilweise englische Originalbegriffe. Nutze sie zur Orientierung, prüfe technische Details in aktueller Primärdokumentation und verbinde mindestens eine Erkenntnis mit einer eigenen Übung.
+:::
 **Author:** Mohamed Imran K.R.  
 **Publisher:** Packt Publishing  
 **First Published:** 2022  
@@ -8,7 +26,7 @@
 
 ---
 
-## Overview
+## Überblick
 
 “**Learning DevSecOps: The Complete Guide to Integrating Security into DevOps**” is a comprehensive guide to embedding **security principles and practices** across the entire software development and deployment pipeline.  
 The book’s core philosophy is **“shift security left”** — ensuring that security is a shared responsibility integrated early into design, development, testing, and deployment.
@@ -17,7 +35,7 @@ It blends conceptual understanding with hands-on techniques for automating vulne
 
 ---
 
-## Core Themes
+## Kernthemen
 
 - Understanding **DevSecOps culture** and the “security as code” mindset.  
 - Integrating **security testing, monitoring, and compliance** into CI/CD.  
@@ -28,7 +46,7 @@ It blends conceptual understanding with hands-on techniques for automating vulne
 
 ---
 
-## Structure and Chapter Breakdown
+## Aufbau und Kapitel
 
 ### **1. Introduction to DevSecOps**
 - Explains the evolution from DevOps to DevSecOps.  
@@ -116,7 +134,7 @@ It blends conceptual understanding with hands-on techniques for automating vulne
 
 ---
 
-## What You’ll Learn
+## Was du daraus lernen kannst
 
 - How to **embed security automation** in CI/CD pipelines.  
 - Implementing **security-as-code** across applications and infrastructure.  
@@ -126,7 +144,7 @@ It blends conceptual understanding with hands-on techniques for automating vulne
 
 ---
 
-## Strengths
+## Stärken
 
 - Balanced coverage of both culture and technical tooling.  
 - End-to-end DevSecOps workflow examples with real tools.  
@@ -135,7 +153,7 @@ It blends conceptual understanding with hands-on techniques for automating vulne
 
 ---
 
-## Limitations
+## Grenzen
 
 - Tool coverage is broad, not deep — assumes prior DevOps familiarity.  
 - Some examples are conceptual rather than step-by-step.  
@@ -143,7 +161,7 @@ It blends conceptual understanding with hands-on techniques for automating vulne
 
 ---
 
-## Ideal Readers
+## Geeignet für
 
 | Role | Benefit |
 |------|----------|
@@ -154,7 +172,7 @@ It blends conceptual understanding with hands-on techniques for automating vulne
 
 ---
 
-## TL;DR Summary
+## Kurzfassung
 
 | Topic | Key Takeaway |
 |--------|--------------|

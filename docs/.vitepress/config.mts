@@ -5,7 +5,7 @@ export default defineConfig({
   lang: 'de-DE',
   title: 'Yoschey Dev Garage',
   titleTemplate: ':title | Yoschey Dev Garage',
-  description: 'Praxiswissen, Runbooks und Notizen zu DevOps, PowerShell, Linux, Softwarearchitektur und Security.',
+  description: 'Das deutschsprachige DevOps-Lexikon für Ausbildung und Praxis: Grundlagen, Labs, Runbooks und Wissen zu CI/CD, PowerShell, Linux, Cloud und Security.',
   base: '/Doc-Blog/',
   lastUpdated: true,
   head: [
@@ -71,8 +71,8 @@ export default defineConfig({
       next: 'Nächste Seite'
     },
     footer: {
-      message: 'Notizen aus der Dev Garage – zum Lernen, Nachschlagen und Weiterbauen.',
-      copyright: 'Inhalte unter eigener Verantwortung testen.'
+      message: 'DevOps verständlich lernen, sicher ausprobieren und im Team weitergeben.',
+      copyright: 'Beispiele zuerst im Lab testen. Stand: fortlaufend gepflegt.'
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Yoschey/Doc-Blog' },

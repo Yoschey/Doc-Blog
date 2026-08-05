@@ -1,47 +1,197 @@
-# Aufgabenliste für PowerShell & Bash – DevOps Essentials
+---
+title: PowerShell-Grundlagen
+description: Objekte, Pipeline, Hilfe, Variablen, Funktionen und Fehler für sichere Automation verstehen.
+learning:
+  level: Einstieg
+  duration: 60 Minuten
+  goals:
+    - die PowerShell-Objektpipeline von einer Textpipeline unterscheiden.
+    - Befehle über Hilfe und Objekteigenschaften selbstständig erkunden.
+    - eine kleine Funktion mit Parametern und klarer Ausgabe schreiben.
+  terms: [Cmdlet, Objekt, Pipeline, Parameter, Funktion]
+  practice: Löse fünf Aufgaben am Ende mit Objekten. Verwende Format-Table nur bei der Anzeige und exportiere dieselben Daten zusätzlich als JSON.
+  check:
+    - question: Warum sollte Format-Table am Ende einer Pipeline stehen?
+      answer: Format-Cmdlets erzeugen Darstellungsobjekte für den Bildschirm. Danach sind die ursprünglichen Eigenschaften nicht mehr zuverlässig weiterzuverarbeiten.
+    - question: Wie findest du passende Befehle ohne Suchmaschine?
+      answer: Mit Get-Command, Get-Help und Get-Member; zuerst Verb oder Nomen suchen, dann Beispiele und Objekteigenschaften prüfen.
+    - question: Was ist der Vorteil einer Funktion mit Parametern gegenüber kopierten Befehlen?
+      answer: Sie definiert einen wiederverwendbaren Vertrag, kann Eingaben validieren, getestet und versioniert werden.
+  next: /lernwerkstatt/lab-powershell
+---
 
-### 1. Ordnerstruktur erstellen  
-Erstelle eine Verzeichnisstruktur mit mehreren Unterordnern (z.B. `Logs`, `Backups`, `Temp`).
+# PowerShell-Grundlagen – mit Objekten automatisieren
 
-### 2. Dateien erzeugen  
-Erstelle in jedem Ordner eine leere Textdatei mit aktuellem Datum im Dateinamen.
+PowerShell übergibt zwischen Befehlen normalerweise **Objekte**, nicht nur Textzeilen. Eigenschaften wie `Name`, `Status` oder `Length` bleiben erhalten und können gezielt gefiltert, sortiert und exportiert werden.
 
-### 3. Dateien kopieren  
-Kopiere alle `.log` Dateien aus `Logs` in `Backups`.
+## Befehle entdecken
 
-### 4. Dateien verschieben  
-Verschiebe alle Dateien, die älter als 7 Tage sind, in den `Temp` Ordner.
+PowerShell-Cmdlets folgen meist dem Muster `Verb-Nomen`:
 
-### 5. Dateien löschen  
-Lösche alle `.tmp` Dateien im `Temp` Ordner, die älter als 3 Tage sind.
+```powershell
+Get-Command -Verb Get -Noun '*Service*'
+Get-Help Get-Service -Examples
+Get-Help Get-Service -Full
+```
 
-### 6. Dateiinhalte lesen  
-Lies die ersten 10 Zeilen jeder `.log` Datei aus und gib sie in der Konsole aus.
+Aktualisiere Hilfetexte auf einem freigegebenen System mit `Update-Help`. Die lokal installierte Hilfe passt zur vorhandenen Version besser als ein zufälliger Blogbeitrag.
 
-### 7. Dateiinhalte anhängen  
-Füge am Ende einer Datei `summary.log` eine neue Zeile mit aktuellem Zeitstempel hinzu.
+## Objekte untersuchen
 
-### 8. Dateisuche nach Text  
-Suche in allen `.log` Dateien nach dem Wort „ERROR“ und liste die Dateinamen mit Zeilennummern.
+```powershell
+Get-Service | Get-Member
+Get-Service | Select-Object -First 1 | Format-List *
+```
 
-### 9. Dateigröße ermitteln  
-Ermittle die Größe aller Dateien im `Backups` Ordner und berechne die Gesamtgröße.
+`Get-Member` zeigt Typ, Eigenschaften und Methoden. Danach kannst du objektbasiert arbeiten:
 
-### 10. Dateinamen umbenennen  
-Hänge an alle `.txt` Dateien im `Logs` Ordner das Suffix `_old` an.
+```powershell
+Get-Service |
+    Where-Object Status -eq 'Running' |
+    Sort-Object DisplayName |
+    Select-Object Name, DisplayName, Status
+```
 
-### 11. Prozess starten und überwachen  
-Starte einen Prozess (z.B. `ping`) und schreibe dessen Ausgabe in eine Datei.
+Erst ganz am Ende formatieren:
 
-### 12. Systeminformationen ausgeben  
-Gib grundlegende Systeminfos (Hostname, IP-Adresse, CPU-Auslastung) aus.
+```powershell
+$services = Get-Service |
+    Where-Object Status -eq 'Running' |
+    Select-Object Name, DisplayName, Status
 
-### 13. Umgebungsvariablen auslesen  
-Lies eine Umgebungsvariable aus und gib sie aus.
+$services | Format-Table
+$services | ConvertTo-Json | Set-Content -Path './services.json' -Encoding utf8
+```
 
-### 14. Backup-Skript  
-Schreibe ein Skript, das den `Logs` Ordner täglich in einen Backup-Ordner kopiert und alte Backups löscht.
+## Variablen und Datentypen
 
-### 15. Fehler-Logging  
-Fange Fehler beim Kopieren von Dateien ab und schreibe sie in eine `error.log` Datei.
+```powershell
+[string]$EnvironmentName = 'test'
+[int]$Port = 8443
+[datetime]$CheckedAt = Get-Date
+[bool]$Enabled = $true
+```
 
+Doppelte Anführungszeichen interpolieren Variablen, einfache nicht:
+
+```powershell
+"Environment: $EnvironmentName"
+'Environment: $EnvironmentName'
+```
+
+Für komplexe Ausdrücke in Strings:
+
+```powershell
+"Checked at $($CheckedAt.ToUniversalTime().ToString('O'))"
+```
+
+## Arrays und Hashtables
+
+```powershell
+$ports = @(80, 443, 8443)
+$configuration = @{
+    Environment = 'test'
+    RetryCount = 3
+    TimeoutSec = 10
+}
+```
+
+Konfigurationsdaten lassen sich in ein Objekt überführen:
+
+```powershell
+$result = [pscustomobject]@{
+    ComputerName = $env:COMPUTERNAME
+    TimestampUtc = (Get-Date).ToUniversalTime()
+    Ports = $ports
+    Ready = $true
+}
+```
+
+## Dateien sicher verarbeiten
+
+```powershell
+$labRoot = Join-Path $PWD 'lab-data'
+New-Item -ItemType Directory -Path $labRoot -Force | Out-Null
+
+$logPath = Join-Path $labRoot 'app.log'
+Set-Content -Path $logPath -Value 'INFO started' -Encoding utf8
+Add-Content -Path $logPath -Value 'ERROR sample failure' -Encoding utf8
+
+Select-String -Path $logPath -Pattern 'ERROR' -SimpleMatch
+```
+
+`Join-Path` verhindert viele fehlerhafte Trennzeichen. Vor Lösch- oder Verschiebeaktionen Ziele auflösen und zunächst mit `-WhatIf` prüfen, wenn das Cmdlet es unterstützt.
+
+## Eine Funktion mit Vertrag
+
+```powershell
+function Get-LargeFile {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory)]
+        [ValidateScript({ Test-Path -LiteralPath $_ -PathType Container })]
+        [string]$Path,
+
+        [ValidateRange(0, 1TB)]
+        [long]$MinimumBytes = 10MB
+    )
+
+    Get-ChildItem -LiteralPath $Path -File -Recurse -ErrorAction Stop |
+        Where-Object Length -ge $MinimumBytes |
+        Select-Object FullName, Length, LastWriteTimeUtc
+}
+```
+
+Aufruf:
+
+```powershell
+Get-LargeFile -Path $labRoot -MinimumBytes 1KB |
+    Sort-Object Length -Descending
+```
+
+Die Funktion liefert Datenobjekte und entscheidet nicht über Bildschirmformat oder Export. Das macht sie wiederverwendbar.
+
+## Fehler verstehen
+
+Nicht jeder Fehler ist standardmäßig terminierend. Für kontrollierte Behandlung:
+
+```powershell
+try {
+    $content = Get-Content -LiteralPath './required.conf' -ErrorAction Stop
+}
+catch [System.Management.Automation.ItemNotFoundException] {
+    Write-Error "Configuration file is missing: $($_.Exception.Message)"
+    exit 2
+}
+catch {
+    Write-Error "Unexpected failure: $($_.Exception.Message)"
+    exit 1
+}
+```
+
+`Write-Host` ist für Benutzerhinweise, nicht für maschinenlesbare Ergebnisdaten. Nutze Output-Stream, Error-Stream und sinnvolle Exit Codes bewusst.
+
+## Fünf Praxisaufgaben
+
+1. Liste die fünf größten Dateien eines Lab-Ordners als Objekte.
+2. Finde in `.log`-Dateien `ERROR` und gib Pfad, Zeilennummer und Text aus.
+3. Erzeuge einen Systemreport mit Hostname, PowerShell-Version und UTC-Zeit als JSON.
+4. Prüfe einen TCP-Port mit `Test-NetConnection` und forme ein kleines Ergebnisobjekt.
+5. Schreibe eine Funktion, die einen Pfad validiert und die Gesamtgröße lesbar zurückgibt.
+
+Für jede Aufgabe gilt:
+
+- positiver und negativer Test,
+- keine echten Unternehmensdaten,
+- klare Ausgabeobjekte,
+- Fehler führt zu einem nachvollziehbaren Befund,
+- Beispielaufruf in der Hilfe.
+
+## Weiterlernen
+
+- [PowerShell für DevOps](/powershell-kurs)
+- [Fehlerbehandlung & Logging](/windows/powershell-fehlerbehandlung)
+- [Pester](/windows/pester-testing)
+- [Lab 3](/lernwerkstatt/lab-powershell)
+
+**Primärquelle:** [Microsoft Learn: PowerShell documentation](https://learn.microsoft.com/en-us/powershell/)

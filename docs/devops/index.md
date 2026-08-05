@@ -8,6 +8,10 @@ aside: false
 
 DevOps ist kein einzelnes Tool. Es ist die Fähigkeit, Änderungen klein, überprüfbar und wiederholbar bis in den Betrieb zu bringen – mit schnellem Feedback und klarer Verantwortung.
 
+::: tip Neu im Thema?
+Beginne mit [Was ist DevOps?](../grundlagen/was-ist-devops) und [CI/CD-Grundlagen](../grundlagen/ci-cd-grundlagen), bevor du ein konkretes Pipeline- oder Plattformprodukt auswählst.
+:::
+
 <div class="tag-row"><span class="tag">CI/CD</span><span class="tag">GitOps</span><span class="tag">Container</span><span class="tag">IaC</span><span class="tag">Observability</span></div>
 
 <div class="topic-grid">

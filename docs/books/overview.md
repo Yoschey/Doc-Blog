@@ -1,61 +1,53 @@
-# DevOps Reference Library – Table of Contents
-
-A curated collection of detailed book summaries focused on **DevOps, Automation, Infrastructure as Code, and Cloud Engineering**.  
-Each summary provides an in-depth overview, chapter breakdown, and practical takeaways for day-to-day technical work.
-
+---
+title: DevOps-Bibliothek
+description: Einordnung der vorhandenen Buchzusammenfassungen nach Lernziel und Vorwissen.
+learning:
+  level: Orientierung · Vertiefung
+  duration: 15 Minuten
+  goals:
+    - ein Buch passend zum eigenen Lernziel auswählen.
+    - Buchwissen mit Praxisartikel und Lab verbinden.
+    - Zusammenfassungen als Einstieg statt als Ersatz für Originalquellen nutzen.
+  terms: [Vertiefung, Transfer, Primärquelle, Praxis, Reflexion]
+  practice: Wähle ein Buch, formuliere vor dem Lesen drei Fragen und übertrage danach eine Erkenntnis auf einen konkreten Artikel oder ein Lab dieses Lexikons.
+  next: /lernwerkstatt/
 ---
 
-## 📚 Book Summaries
+# DevOps-Bibliothek
 
-| # | Title | Description |
-|---|-------|--------------|
-| 1 | **DevOps for the Desperate** | A practical, hands-on guide for improving DevOps reliability and efficiency under pressure. |
-| 2 | **PowerShell Cookbook** | A comprehensive recipe collection for automating Windows and cloud tasks using PowerShell. | 
-| 3 | **PowerShell for Sysadmins** | Teaches real-world PowerShell automation through system administration projects. | 
-| 4 | **PowerShell Pocket Reference** | A concise syntax and command lookup guide for experienced PowerShell users. | 
-| 5 | **DevOps for Dummies** | A beginner-friendly introduction to DevOps culture, CI/CD, automation, and collaboration. | 
-| 6 | **Effective DevOps** | Explores the people, culture, and leadership behind sustainable DevOps transformations. | 
-| 7 | **GitOps Cookbook** | Practical examples of managing infrastructure declaratively using Git as the source of truth. |
-| 8 | **Learning DevSecOps** | Comprehensive guide to embedding security and compliance into DevOps pipelines. | 
-| 9 | **Python for DevOps** | Demonstrates how to use Python for automation, CI/CD, cloud operations, and AIOps. | 
-| 10 | **Ansible: Up and Running** | Hands-on walkthrough for automating infrastructure and configuration with Ansible. | 
+Die Zusammenfassungen helfen bei der Auswahl und Wiederholung. Sie ersetzen weder das Originalbuch noch aktuelle Produktdokumentation. Verbinde jedes Kapitel mit einer eigenen Übung oder einem konkreten Betriebsproblem.
 
----
+## Vorhandene Zusammenfassungen
 
-## 🔍 How to Use This Library
+| Titel | Schwerpunkt | Geeignet ab | Passender Praxispfad |
+|---|---|---|---|
+| [DevOps for Dummies](./DevOps_for_Dummies_Summary) | Kultur und Gesamtüberblick | Einstieg | [Was ist DevOps?](../grundlagen/was-ist-devops) |
+| [Effective DevOps](./Effective_DevOps_Summary) | Zusammenarbeit, Lernen und Organisation | Einstieg/Aufbau | [Daily DevOps](../Daily-DevOps) |
+| [Ansible: Up and Running](./Ansible_Up_and_Running_Summary) | Konfigurationsautomation | Aufbau | [Infrastructure as Code](../devops/infrastructure-as-code) |
+| [GitOps Cookbook](./GitOps_Cookbook_Summary) | deklarativer Betrieb und Reconciliation | Aufbau | [GitOps in der Praxis](../devops/gitops-praxis) |
+| [Learning DevSecOps](./Learning_DevSecOps_Summary) | Security im Delivery-Lebenszyklus | Aufbau | [CI/CD Security](../security/cicd-security) |
+| [PowerShell for Sysadmins](./PowerShell_for_Sysadmins_Summary) | Windows-Automation | Grundlagen | [PowerShell-Grundlagen](../Basis-Powershell) |
+| [PowerShell Pocket Reference](./PowerShell_Pocket_Reference_Summary) | Syntax und Nachschlagen | Aufbau | [PowerShell für Fortgeschrittene](../Powershell-Fortgeschrittene) |
+| [Python for DevOps](./Python_for_DevOps_Summary) | Automation, APIs und Betrieb | Aufbau | [CI/CD-Grundlagen](../grundlagen/ci-cd-grundlagen) |
 
-- Browse summaries to identify which books match your learning goals.  
-- Use links to quickly reference automation patterns, workflows, and examples.  
-- Combine related topics (e.g., *Python + Ansible* or *DevOps + DevSecOps*) for deeper learning paths.  
-- Keep this document as a central reading hub in your DevOps knowledge base.
+## So liest du technisch
 
----
+1. **Frage formulieren:** Welches Problem willst du besser verstehen?
+2. **Begriffsliste führen:** Unbekannte Begriffe im [Lexikon](../lexikon/) abgleichen.
+3. **Behauptung prüfen:** Versionsabhängige Aussagen mit offizieller Dokumentation vergleichen.
+4. **Mini-Beispiel bauen:** Eine Idee in isolierter Umgebung anwenden.
+5. **Trade-off notieren:** Wann ist die Empfehlung ungeeignet?
+6. **Erklären:** Erkenntnis in fünf Sätzen für eine andere Person zusammenfassen.
 
-## 🧭 Suggested Learning Path
+## Empfohlene Reihenfolge für Azubis
 
-1. **Start with Culture and Foundations:**  
-   - DevOps for Dummies  
-   - Effective DevOps  
+1. *DevOps for Dummies* für Vokabular und Überblick.
+2. *Effective DevOps* für Team- und Lernperspektive.
+3. *PowerShell for Sysadmins* oder *Python for DevOps* für Automation.
+4. *Ansible: Up and Running* für wiederholbare Systemkonfiguration.
+5. *GitOps Cookbook* für deklarativen Betrieb.
+6. *Learning DevSecOps* für integrierte Sicherheitskontrollen.
 
-2. **Learn the Automation Tools:**  
-   - PowerShell for Sysadmins  
-   - PowerShell Cookbook  
-   - Ansible: Up and Running  
-
-3. **Build Delivery and Deployment Workflows:**  
-   - GitOps Cookbook  
-   - Python for DevOps  
-
-4. **Integrate Security and Reliability:**  
-   - Learning DevSecOps  
-   - DevOps for the Desperate  
-
-5. **Keep a Quick Reference Handy:**  
-   - PowerShell Pocket Reference  
-
----
-
-**Author:** Compiled by ChatGPT (GPT-5)  
-**Last Updated:** October 2025  
-**License:** For personal learning and internal documentation use only.
-
+::: info Sprache und Aktualität
+Einige Zusammenfassungen verwenden die englischen Originalbegriffe. Produktversionen, Cloud-Dienste und Security-Empfehlungen können sich seit Veröffentlichung geändert haben. Für konkrete Umsetzung gilt die verlinkte Primärdokumentation des jeweiligen Werkzeugs.
+:::

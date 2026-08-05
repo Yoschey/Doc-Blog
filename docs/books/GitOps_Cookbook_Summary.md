@@ -1,5 +1,23 @@
-# GitOps Cookbook – Detailed Summary
+---
+title: "GitOps Cookbook – Zusammenfassung"
+description: Rezepte für deklarative Infrastruktur, Git-Workflows und Reconciliation einordnen.
+learning:
+  level: Vertiefung
+  duration: 30–45 Minuten
+  goals:
+    - die Kernaussagen des Buchs strukturiert wiedergeben.
+    - Empfehlungen auf den eigenen Arbeitskontext übertragen.
+    - versionsabhängige Aussagen mit Primärdokumentation abgleichen.
+  terms: [GitOps, Reconciliation, Kubernetes, IaC]
+  practice: Wähle eine Empfehlung aus der Zusammenfassung, formuliere ihren erwarteten Nutzen und prüfe sie in einem kleinen Lab oder anhand eines bestehenden Teamprozesses.
+  next: /devops/gitops-praxis
+---
 
+# GitOps Cookbook – Zusammenfassung
+
+::: info Einordnung für Azubis
+Diese Zusammenfassung verwendet teilweise englische Originalbegriffe. Nutze sie zur Orientierung, prüfe technische Details in aktueller Primärdokumentation und verbinde mindestens eine Erkenntnis mit einer eigenen Übung.
+:::
 **Authors:** Bilgin Ibryam & Stefan Prodan  
 **Publisher:** O’Reilly Media  
 **First Published:** 2021  
@@ -8,7 +26,7 @@
 
 ---
 
-## Overview
+## Überblick
 
 “**GitOps Cookbook: Kubernetes Automation at Scale**” by Bilgin Ibryam and Stefan Prodan is a **hands-on, example-oriented guide** to applying GitOps practices in modern DevOps environments.  
 The book is built around the idea of **managing infrastructure and applications declaratively using Git as the single source of truth**.  
@@ -18,7 +36,7 @@ While the examples use Kubernetes, the concepts apply broadly to any infrastruct
 
 ---
 
-## Core Themes
+## Kernthemen
 
 - **GitOps fundamentals** — Git as the source of truth for both code and infrastructure.  
 - Declarative configuration and **automation through pull-based workflows**.  
@@ -29,7 +47,7 @@ While the examples use Kubernetes, the concepts apply broadly to any infrastruct
 
 ---
 
-## Structure and Chapter Breakdown
+## Aufbau und Kapitel
 
 ### **1. Introducing GitOps**
 - Defines GitOps and its origin (Weaveworks).  
@@ -100,7 +118,7 @@ While the examples use Kubernetes, the concepts apply broadly to any infrastruct
 
 ---
 
-## What You’ll Learn
+## Was du daraus lernen kannst
 
 - How to **implement GitOps pipelines** using Flux, ArgoCD, or Jenkins X.  
 - Managing deployments declaratively and automatically.  
@@ -110,7 +128,7 @@ While the examples use Kubernetes, the concepts apply broadly to any infrastruct
 
 ---
 
-## Strengths
+## Stärken
 
 - Highly practical and concise — ideal for engineers already using Kubernetes.  
 - Step-by-step examples with real configurations.  
@@ -119,7 +137,7 @@ While the examples use Kubernetes, the concepts apply broadly to any infrastruct
 
 ---
 
-## Limitations
+## Grenzen
 
 - Strong Kubernetes focus — limited coverage for non-Kubernetes systems.  
 - Assumes prior CI/CD and Git familiarity.  
@@ -127,7 +145,7 @@ While the examples use Kubernetes, the concepts apply broadly to any infrastruct
 
 ---
 
-## Ideal Readers
+## Geeignet für
 
 | Role | Benefit |
 |------|----------|
@@ -138,7 +156,7 @@ While the examples use Kubernetes, the concepts apply broadly to any infrastruct
 
 ---
 
-## TL;DR Summary
+## Kurzfassung
 
 | Topic | Key Takeaway |
 |--------|--------------|

@@ -1,49 +1,71 @@
 ---
-outline: deep
+title: VitePress Runtime API
+description: Die Runtime-Daten dieser Dokumentationsseite sicher für eigene Komponenten verwenden.
+learning:
+  level: Redaktion · Aufbau
+  duration: 20 Minuten
+  goals:
+    - site-, theme-, page- und frontmatter-Daten unterscheiden.
+    - useData in Markdown und Vue-Komponenten verwenden.
+    - sensible Werte aus statisch erzeugten Seiten fernhalten.
+  terms: [VitePress, useData, Frontmatter, Theme, Static Site]
+  practice: Erzeuge in einer lokalen Testseite eine Komponente, die Titel und letzte Aktualisierung anzeigt. Prüfe den statischen Build auf unbeabsichtigte Daten.
+  next: /markdown-examples
 ---
 
-# Runtime API Examples
+# VitePress Runtime API
 
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
+Diese Seite richtet sich an Personen, die das Lexikon selbst erweitern. VitePress stellt Seiten-, Theme- und Frontmatter-Daten über `useData()` bereit.
 
-The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
+## Daten lesen
 
-```md
-<script setup>
+```vue
+<script setup lang="ts">
 import { useData } from 'vitepress'
 
-const { theme, page, frontmatter } = useData()
+const { site, theme, page, frontmatter, isDark } = useData()
 </script>
 
-## Results
-
-### Theme Data
-<pre>{{ theme }}</pre>
-
-### Page Data
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
+<template>
+  <dl>
+    <dt>Seitentitel</dt>
+    <dd>{{ page.title }}</dd>
+    <dt>Sprache</dt>
+    <dd>{{ site.lang }}</dd>
+    <dt>Dark Mode</dt>
+    <dd>{{ isDark ? 'aktiv' : 'inaktiv' }}</dd>
+  </dl>
+</template>
 ```
 
-<script setup>
-import { useData } from 'vitepress'
+## Die vier Ebenen
 
-const { site, theme, page, frontmatter } = useData()
-</script>
+| Wert | Inhalt |
+|---|---|
+| `site` | globale, aufgelöste Site-Konfiguration |
+| `theme` | Daten aus `themeConfig` |
+| `page` | Metadaten der aktuellen Markdown-Seite |
+| `frontmatter` | YAML-Daten der aktuellen Seite |
 
-## Results
+## Lernmetadaten dieses Lexikons
 
-### Theme Data
-<pre>{{ theme }}</pre>
+Neue Fachartikel können individuelle Angaben setzen:
 
-### Page Data
-<pre>{{ page }}</pre>
+```yaml
+learning:
+  level: Einstieg
+  duration: 30 Minuten
+  goals:
+    - einen klaren Lernerfolg beschreiben.
+  terms: [Begriff A, Begriff B]
+  practice: Eine konkrete Aufgabe in der Testumgebung.
+  next: /start
+```
 
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
+Ohne Angaben erzeugt das Theme eine sinnvolle Standard-Lernübersicht.
 
-## More
+::: danger Alles wird öffentlich gebaut
+Frontmatter und Site-Konfiguration sind Teil der statisch erzeugten Website. Dort niemals Tokens, interne Endpunkte, personenbezogene Daten oder andere Secrets ablegen.
+:::
 
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
+**Primärquelle:** [VitePress Runtime API](https://vitepress.dev/reference/runtime-api#usedata)

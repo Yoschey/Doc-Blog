@@ -1,14 +1,24 @@
 ---
 title: Lernpfade
-description: Geführte Einstiege durch die Yoschey Dev Garage.
+description: Geführte Einstiege für Azubis, Admins, Entwickler und Betriebsteams.
 aside: false
 ---
 
 # Womit willst du anfangen?
 
-Nicht jede Seite muss von oben nach unten gelesen werden. Nimm den Pfad, der zu deinem aktuellen Problem passt, und springe später zwischen den Themen.
+Wenn du neu im Thema bist, beginne mit dem [Azubi-Lernplan](./lernwerkstatt/). Für ein konkretes Problem wählst du direkt den passenden Pfad. Unbekannte Begriffe stehen im [Lexikon A–Z](./lexikon/).
 
 <div class="topic-grid">
+  <a class="topic-card" href="./lernwerkstatt/">
+    <span class="topic-card__icon">🎓</span>
+    <strong>Ich lerne DevOps von Grund auf</strong>
+    <span>Acht Module, fünf Praxis-Labs, Kompetenzraster und Ausbildungsnachweis.</span>
+  </a>
+  <a class="topic-card" href="./grundlagen/">
+    <span class="topic-card__icon">🧭</span>
+    <strong>Mir fehlen IT-Grundlagen</strong>
+    <span>Git, Netzwerke, HTTP, Linux-Rechte, Prozesse, CI/CD und Cloud verständlich aufbauen.</span>
+  </a>
   <a class="topic-card" href="./devops/">
     <span class="topic-card__icon">🚀</span>
     <strong>Ich will bessere Deployments</strong>
@@ -42,6 +52,16 @@ Nicht jede Seite muss von oben nach unten gelesen werden. Nimm den Pfad, der zu 
 </div>
 
 ## Empfohlene Reihenfolgen
+
+### Einstieg ohne Vorwissen
+
+1. [Was ist DevOps?](./grundlagen/was-ist-devops)
+2. [Git-Grundlagen](./grundlagen/git-grundlagen)
+3. [Netzwerk-Grundlagen](./grundlagen/netzwerk-grundlagen)
+4. [Dateisystem & Rechte](./grundlagen/dateisystem-rechte)
+5. [Prozesse, Dienste & Ports](./grundlagen/prozesse-dienste-ports)
+6. [CI/CD-Grundlagen](./grundlagen/ci-cd-grundlagen)
+7. [Praxis-Labs](./lernwerkstatt/labs)
 
 ### DevOps in fünf Etappen
 

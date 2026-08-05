@@ -1,5 +1,23 @@
-# Effective DevOps – Detailed Summary
+---
+title: "Effective DevOps – Zusammenfassung"
+description: Zusammenarbeit, Kultur, Lernen und nachhaltige Veränderung in DevOps-Organisationen.
+learning:
+  level: Vertiefung
+  duration: 30–45 Minuten
+  goals:
+    - die Kernaussagen des Buchs strukturiert wiedergeben.
+    - Empfehlungen auf den eigenen Arbeitskontext übertragen.
+    - versionsabhängige Aussagen mit Primärdokumentation abgleichen.
+  terms: [Kultur, Zusammenarbeit, Lernen, Organisation]
+  practice: Wähle eine Empfehlung aus der Zusammenfassung, formuliere ihren erwarteten Nutzen und prüfe sie in einem kleinen Lab oder anhand eines bestehenden Teamprozesses.
+  next: /Daily-DevOps
+---
 
+# Effective DevOps – Zusammenfassung
+
+::: info Einordnung für Azubis
+Diese Zusammenfassung verwendet teilweise englische Originalbegriffe. Nutze sie zur Orientierung, prüfe technische Details in aktueller Primärdokumentation und verbinde mindestens eine Erkenntnis mit einer eigenen Übung.
+:::
 **Authors:** Jennifer Davis & Katherine Daniels  
 **Publisher:** O’Reilly Media  
 **First Published:** 2016  
@@ -8,7 +26,7 @@
 
 ---
 
-## Overview
+## Überblick
 
 “**Effective DevOps: Building a Culture of Collaboration, Affinity, and Tooling at Scale**” is not about tools—it’s about **people, culture, and sustainable collaboration**.  
 Davis and Daniels emphasize that DevOps success is built on **trust, communication, empathy, and shared ownership**, not just automation or pipelines.
@@ -18,7 +36,7 @@ It’s ideal for anyone driving DevOps adoption beyond the technical layer.
 
 ---
 
-## Core Themes
+## Kernthemen
 
 - DevOps as a **cultural movement**, not just a toolset.  
 - Building **collaboration and empathy** between teams.  
@@ -29,7 +47,7 @@ It’s ideal for anyone driving DevOps adoption beyond the technical layer.
 
 ---
 
-## Structure and Chapter Breakdown
+## Aufbau und Kapitel
 
 ### **Part I: Foundations of DevOps**
 
@@ -128,7 +146,7 @@ Each pillar is necessary but insufficient on its own—DevOps works when all fou
 
 ---
 
-## What You’ll Learn
+## Was du daraus lernen kannst
 
 - How to **build and scale DevOps culture** within organizations.  
 - The importance of **communication, trust, and empathy** in engineering teams.  
@@ -138,7 +156,7 @@ Each pillar is necessary but insufficient on its own—DevOps works when all fou
 
 ---
 
-## Strengths
+## Stärken
 
 - Deeply human-centered and practical.  
 - Based on real-world experiences from large-scale DevOps transformations.  
@@ -147,7 +165,7 @@ Each pillar is necessary but insufficient on its own—DevOps works when all fou
 
 ---
 
-## Limitations
+## Grenzen
 
 - Minimal focus on specific tools or deep technical examples.  
 - Somewhat abstract for readers expecting hands-on tutorials.  
@@ -155,7 +173,7 @@ Each pillar is necessary but insufficient on its own—DevOps works when all fou
 
 ---
 
-## Ideal Readers
+## Geeignet für
 
 | Role | Benefit |
 |------|----------|
@@ -166,7 +184,7 @@ Each pillar is necessary but insufficient on its own—DevOps works when all fou
 
 ---
 
-## TL;DR Summary
+## Kurzfassung
 
 | Topic | Key Insight |
 |--------|-------------|
