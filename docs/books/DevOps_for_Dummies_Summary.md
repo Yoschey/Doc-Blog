@@ -1,5 +1,23 @@
-# DevOps for Dummies – Detailed Summary
+---
+title: "DevOps for Dummies – Zusammenfassung"
+description: Einsteigerfreundliche Einordnung von Kultur, Automation, CI/CD und Zusammenarbeit.
+learning:
+  level: Vertiefung
+  duration: 30–45 Minuten
+  goals:
+    - die Kernaussagen des Buchs strukturiert wiedergeben.
+    - Empfehlungen auf den eigenen Arbeitskontext übertragen.
+    - versionsabhängige Aussagen mit Primärdokumentation abgleichen.
+  terms: [DevOps, Kultur, CI/CD, Feedback]
+  practice: Wähle eine Empfehlung aus der Zusammenfassung, formuliere ihren erwarteten Nutzen und prüfe sie in einem kleinen Lab oder anhand eines bestehenden Teamprozesses.
+  next: /grundlagen/was-ist-devops
+---
 
+# DevOps for Dummies – Zusammenfassung
+
+::: info Einordnung für Azubis
+Diese Zusammenfassung verwendet teilweise englische Originalbegriffe. Nutze sie zur Orientierung, prüfe technische Details in aktueller Primärdokumentation und verbinde mindestens eine Erkenntnis mit einer eigenen Übung.
+:::
 **Authors:** Emily Freeman, Zachary Flower  
 **Publisher:** Wiley (For Dummies Series)  
 **Latest Edition:** 2nd Edition, 2021  
@@ -8,7 +26,7 @@
 
 ---
 
-## Overview
+## Überblick
 
 “**DevOps for Dummies**” serves as a friendly and comprehensive guide to understanding what DevOps really means — both as a **technical discipline** and a **cultural movement**.  
 It explains how development (Dev) and operations (Ops) teams collaborate to deliver software faster, more reliably, and with higher quality.  
@@ -18,7 +36,7 @@ It’s ideal for readers new to DevOps or those looking to align their teams wit
 
 ---
 
-## Core Themes
+## Kernthemen
 
 - **Breaking down silos** between development and operations.  
 - Building a **culture of collaboration, automation, and continuous improvement**.  
@@ -29,7 +47,7 @@ It’s ideal for readers new to DevOps or those looking to align their teams wit
 
 ---
 
-## Structure and Chapter Breakdown
+## Aufbau und Kapitel
 
 ### **Part I: Understanding DevOps**
 
@@ -137,7 +155,7 @@ It’s ideal for readers new to DevOps or those looking to align their teams wit
 
 ---
 
-## What You’ll Learn
+## Was du daraus lernen kannst
 
 - The **foundations of DevOps culture and mindset**.  
 - How to design and implement **CI/CD pipelines**.  
@@ -148,7 +166,7 @@ It’s ideal for readers new to DevOps or those looking to align their teams wit
 
 ---
 
-## Strengths
+## Stärken
 
 - Comprehensive yet approachable for newcomers.  
 - Balances culture, process, and tools effectively.  
@@ -157,7 +175,7 @@ It’s ideal for readers new to DevOps or those looking to align their teams wit
 
 ---
 
-## Limitations
+## Grenzen
 
 - Limited depth in technical implementation examples.  
 - Focuses more on principles than on advanced engineering.  
@@ -165,7 +183,7 @@ It’s ideal for readers new to DevOps or those looking to align their teams wit
 
 ---
 
-## Ideal Readers
+## Geeignet für
 
 | Role | Benefit |
 |------|----------|
@@ -176,7 +194,7 @@ It’s ideal for readers new to DevOps or those looking to align their teams wit
 
 ---
 
-## TL;DR Summary
+## Kurzfassung
 
 | Topic | Takeaway |
 |--------|-----------|

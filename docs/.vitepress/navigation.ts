@@ -1,6 +1,15 @@
 export const nav = [
   { text: 'Start', link: '/' },
   {
+    text: 'Ausbildung',
+    items: [
+      { text: 'Azubi-Lernplan', link: '/lernwerkstatt/' },
+      { text: 'IT- & DevOps-Grundlagen', link: '/grundlagen/' },
+      { text: 'Lexikon A–Z', link: '/lexikon/' },
+      { text: 'Praxis-Labs', link: '/lernwerkstatt/labs' }
+    ]
+  },
+  {
     text: 'Themen',
     items: [
       { text: 'DevOps', link: '/devops/' },
@@ -13,7 +22,7 @@ export const nav = [
   {
     text: 'Bibliothek',
     items: [
-      { text: 'Praxisbeispiele', link: '/examples/' },
+      { text: 'Praxisvorlagen', link: '/examples/' },
       { text: 'Bücher', link: '/books/overview' },
       { text: 'Freizeit', link: '/hobbies/' }
     ]
@@ -26,12 +35,30 @@ export const sidebar = [
     text: 'Einstieg',
     items: [
       { text: 'Willkommen', link: '/' },
-      { text: 'Lernpfade', link: '/start' }
+      { text: 'Azubi-Lernplan', link: '/lernwerkstatt/' },
+      { text: 'Lernpfade', link: '/start' },
+      { text: 'Lexikon A–Z', link: '/lexikon/' }
+    ]
+  },
+  {
+    text: 'IT- & DevOps-Grundlagen',
+    collapsed: false,
+    items: [
+      { text: 'Übersicht', link: '/grundlagen/' },
+      { text: 'Was ist DevOps?', link: '/grundlagen/was-ist-devops' },
+      { text: 'Git-Grundlagen', link: '/grundlagen/git-grundlagen' },
+      { text: 'Netzwerk-Grundlagen', link: '/grundlagen/netzwerk-grundlagen' },
+      { text: 'HTTP, DNS & TLS', link: '/grundlagen/http-dns-tls' },
+      { text: 'Dateisystem & Rechte', link: '/grundlagen/dateisystem-rechte' },
+      { text: 'Prozesse, Dienste & Ports', link: '/grundlagen/prozesse-dienste-ports' },
+      { text: 'CI/CD-Grundlagen', link: '/grundlagen/ci-cd-grundlagen' },
+      { text: 'Cloud-Grundlagen', link: '/grundlagen/cloud-grundlagen' },
+      { text: 'Troubleshooting-Methode', link: '/grundlagen/troubleshooting' }
     ]
   },
   {
     text: 'DevOps',
-    collapsed: false,
+    collapsed: true,
     items: [
       { text: 'Übersicht', link: '/devops/' },
       { text: 'Daily DevOps', link: '/Daily-DevOps' },
@@ -50,7 +77,7 @@ export const sidebar = [
   },
   {
     text: 'Security',
-    collapsed: false,
+    collapsed: true,
     items: [
       { text: 'Übersicht', link: '/security/' },
       { text: 'Secrets Management', link: '/security/secrets-management' },
@@ -100,14 +127,28 @@ export const sidebar = [
     ]
   },
   {
-    text: 'Praxisbeispiele',
+    text: 'Lernwerkstatt',
+    collapsed: true,
+    items: [
+      { text: 'Ablauf & Kompetenzplan', link: '/lernwerkstatt/' },
+      { text: 'Alle Praxis-Labs', link: '/lernwerkstatt/labs' },
+      { text: 'Lab 1: Git-Teamworkflow', link: '/lernwerkstatt/lab-git' },
+      { text: 'Lab 2: Linux-Fehlersuche', link: '/lernwerkstatt/lab-linux' },
+      { text: 'Lab 3: PowerShell', link: '/lernwerkstatt/lab-powershell' },
+      { text: 'Lab 4: Container & CI', link: '/lernwerkstatt/lab-container-ci' },
+      { text: 'Lab 5: Incident', link: '/lernwerkstatt/lab-incident' },
+      { text: 'Ausbildungsnachweis', link: '/lernwerkstatt/ausbildungsnachweis' }
+    ]
+  },
+  {
+    text: 'Praxisvorlagen',
     collapsed: true,
     items: [
       { text: 'Übersicht', link: '/examples/' },
       { text: 'Runbook-Vorlage', link: '/examples/runbook-vorlage' },
       { text: 'Incident-Checkliste', link: '/examples/incident-checkliste' },
       { text: 'Markdown', link: '/markdown-examples' },
-      { text: 'Runtime API', link: '/api-examples' }
+      { text: 'VitePress Runtime API', link: '/api-examples' }
     ]
   },
   {

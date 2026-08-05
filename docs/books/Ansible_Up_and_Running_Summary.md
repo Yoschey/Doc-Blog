@@ -1,5 +1,23 @@
-# Ansible: Up and Running – Detailed Summary
+---
+title: "Ansible: Up and Running – Zusammenfassung"
+description: Ansible, Playbooks, Rollen und Konfigurationsmanagement einordnen.
+learning:
+  level: Vertiefung
+  duration: 30–45 Minuten
+  goals:
+    - die Kernaussagen des Buchs strukturiert wiedergeben.
+    - Empfehlungen auf den eigenen Arbeitskontext übertragen.
+    - versionsabhängige Aussagen mit Primärdokumentation abgleichen.
+  terms: [Ansible, Playbook, Inventory, Role]
+  practice: Wähle eine Empfehlung aus der Zusammenfassung, formuliere ihren erwarteten Nutzen und prüfe sie in einem kleinen Lab oder anhand eines bestehenden Teamprozesses.
+  next: /devops/infrastructure-as-code
+---
 
+# Ansible: Up and Running – Zusammenfassung
+
+::: info Einordnung für Azubis
+Diese Zusammenfassung verwendet teilweise englische Originalbegriffe. Nutze sie zur Orientierung, prüfe technische Details in aktueller Primärdokumentation und verbinde mindestens eine Erkenntnis mit einer eigenen Übung.
+:::
 **Authors:** Bas Meijer, Lorin Hochstein, and René Moser  
 **Publisher:** O’Reilly Media  
 **Latest Edition:** 3rd Edition (2022)  
@@ -8,7 +26,7 @@
 
 ---
 
-## Overview
+## Überblick
 
 “**Ansible: Up and Running**” is the definitive hands-on guide to automating infrastructure with Ansible.  
 It provides a complete walkthrough of Ansible’s architecture, from simple playbooks to large-scale, multi-environment automation workflows.  
@@ -18,7 +36,7 @@ It focuses on real-world, reproducible automation — ideal for both new users a
 
 ---
 
-## Core Themes
+## Kernthemen
 
 - **Declarative automation** using YAML playbooks.  
 - Managing **servers, cloud instances, and containers** at scale.  
@@ -29,7 +47,7 @@ It focuses on real-world, reproducible automation — ideal for both new users a
 
 ---
 
-## Structure and Chapter Breakdown
+## Aufbau und Kapitel
 
 ### **1. Introduction to Ansible**
 - Explains the philosophy: “Simple, agentless, and human-readable automation.”  
@@ -117,7 +135,7 @@ It focuses on real-world, reproducible automation — ideal for both new users a
 
 ---
 
-## What You’ll Learn
+## Was du daraus lernen kannst
 
 - How to **build scalable, maintainable Ansible automation systems**.  
 - Writing **modular playbooks and roles** for reusability.  
@@ -127,7 +145,7 @@ It focuses on real-world, reproducible automation — ideal for both new users a
 
 ---
 
-## Strengths
+## Stärken
 
 - Excellent blend of conceptual clarity and hands-on practice.  
 - Updated for Ansible 2.12+ and modern DevOps workflows.  
@@ -136,7 +154,7 @@ It focuses on real-world, reproducible automation — ideal for both new users a
 
 ---
 
-## Limitations
+## Grenzen
 
 - Assumes basic Linux and YAML knowledge.  
 - Some examples focus primarily on Linux environments.  
@@ -144,7 +162,7 @@ It focuses on real-world, reproducible automation — ideal for both new users a
 
 ---
 
-## Ideal Readers
+## Geeignet für
 
 | Role | Benefit |
 |------|----------|
@@ -155,7 +173,7 @@ It focuses on real-world, reproducible automation — ideal for both new users a
 
 ---
 
-## TL;DR Summary
+## Kurzfassung
 
 | Topic | Key Takeaway |
 |--------|--------------|

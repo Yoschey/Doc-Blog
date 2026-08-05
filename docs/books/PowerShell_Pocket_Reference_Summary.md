@@ -1,5 +1,23 @@
-# PowerShell Pocket Reference – Detailed Summary
+---
+title: "PowerShell Pocket Reference – Zusammenfassung"
+description: PowerShell-Syntax, Objektpipeline und Sprachkonstrukte als Nachschlagewerk einordnen.
+learning:
+  level: Vertiefung
+  duration: 30–45 Minuten
+  goals:
+    - die Kernaussagen des Buchs strukturiert wiedergeben.
+    - Empfehlungen auf den eigenen Arbeitskontext übertragen.
+    - versionsabhängige Aussagen mit Primärdokumentation abgleichen.
+  terms: [PowerShell, Cmdlet, Pipeline, Syntax]
+  practice: Wähle eine Empfehlung aus der Zusammenfassung, formuliere ihren erwarteten Nutzen und prüfe sie in einem kleinen Lab oder anhand eines bestehenden Teamprozesses.
+  next: /Powershell-Fortgeschrittene
+---
 
+# PowerShell Pocket Reference – Zusammenfassung
+
+::: info Einordnung für Azubis
+Diese Zusammenfassung verwendet teilweise englische Originalbegriffe. Nutze sie zur Orientierung, prüfe technische Details in aktueller Primärdokumentation und verbinde mindestens eine Erkenntnis mit einer eigenen Übung.
+:::
 **Author:** Lee Holmes  
 **Publisher:** O’Reilly Media  
 **Latest Edition:** 4th Edition (2021)  
@@ -8,7 +26,7 @@
 
 ---
 
-## Overview
+## Überblick
 
 “**PowerShell Pocket Reference**” is the compact companion to Lee Holmes’ *PowerShell Cookbook*.  
 While the Cookbook teaches concepts through examples, the Pocket Reference focuses on **syntax, parameters, and quick command recall**.  
@@ -18,7 +36,7 @@ The 4th Edition includes updates for **PowerShell 7**, covering both Windows Pow
 
 ---
 
-## Purpose of the Book
+## Ziel des Buchs
 
 - Serve as a **quick-access syntax guide** for daily PowerShell work.  
 - Provide **ready-to-use command patterns** for common tasks.  
@@ -27,7 +45,7 @@ The 4th Edition includes updates for **PowerShell 7**, covering both Windows Pow
 
 ---
 
-## Book Structure and Key Sections
+## Aufbau und wichtige Abschnitte
 
 ### **1. Getting Started**
 - Basic PowerShell architecture and version differences (Windows PowerShell vs PowerShell Core).  
@@ -108,7 +126,7 @@ The 4th Edition includes updates for **PowerShell 7**, covering both Windows Pow
 
 ---
 
-## What You’ll Learn
+## Was du daraus lernen kannst
 
 - Quickly recall syntax and commands without searching online.  
 - Write efficient one-liners and scripts.  
@@ -118,7 +136,7 @@ The 4th Edition includes updates for **PowerShell 7**, covering both Windows Pow
 
 ---
 
-## Strengths
+## Stärken
 
 - Compact and portable — ideal desk or field reference.  
 - Extremely practical and up-to-date for PowerShell 7.  
@@ -127,7 +145,7 @@ The 4th Edition includes updates for **PowerShell 7**, covering both Windows Pow
 
 ---
 
-## Limitations
+## Grenzen
 
 - No tutorials or theory; assumes prior PowerShell experience.  
 - Focuses on syntax and command usage, not automation design.  
@@ -135,7 +153,7 @@ The 4th Edition includes updates for **PowerShell 7**, covering both Windows Pow
 
 ---
 
-## Ideal Readers
+## Geeignet für
 
 | Role | Benefit |
 |------|----------|
@@ -146,7 +164,7 @@ The 4th Edition includes updates for **PowerShell 7**, covering both Windows Pow
 
 ---
 
-## TL;DR Summary
+## Kurzfassung
 
 | Topic | Takeaway |
 |--------|-----------|

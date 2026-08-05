@@ -1,107 +1,171 @@
-# Dependency Injection for .NET
+---
+title: Dependency Injection in .NET
+description: Abhängigkeiten explizit machen, Lebenszyklen wählen und testbare .NET-Komponenten bauen.
+learning:
+  level: Aufbau
+  duration: 40 Minuten
+  goals:
+    - Dependency Injection, Inversion of Control und Service Locator unterscheiden.
+    - Constructor Injection in modernem .NET anwenden.
+    - Transient, Scoped und Singleton anhand des Zustands auswählen.
+  terms: [Dependency Injection, IoC, Abstraktion, Lebenszyklus, Composition Root]
+  practice: Extrahiere aus einer Klasse, die selbst Datei- oder Netzwerkzugriffe erzeugt, ein kleines Interface. Injiziere die Abhängigkeit und schreibe einen Unit-Test ohne echten I/O.
+  check:
+    - question: Was ist der Composition Root?
+      answer: Der zentrale Ort, an dem konkrete Implementierungen erzeugt, konfiguriert und zu einem Objektgraphen verbunden werden, in ASP.NET Core typischerweise Program.cs.
+    - question: Warum darf ein Singleton nicht einfach einen Scoped Service halten?
+      answer: Der Singleton lebt länger und würde eine scoped Instanz über deren vorgesehenen Gültigkeitsbereich hinaus festhalten.
+    - question: Was unterscheidet Service Locator von Constructor Injection?
+      answer: Service Locator sucht Abhängigkeiten verdeckt zur Laufzeit; Constructor Injection macht sie im Konstruktorvertrag sichtbar.
+  next: /concepts/solid-prinzipien
+---
 
-Dependency Injection (DI) is a design pattern that helps to achieve loose coupling between classes by injecting their dependencies rather than having them create the dependencies themselves.
+# Dependency Injection in .NET
 
-## What is Dependency Injection?
+Dependency Injection (DI) bedeutet: Eine Klasse erzeugt ihre benötigten Dienste nicht selbst, sondern erhält sie von außen. Dadurch werden Abhängigkeiten im Vertrag sichtbar und Implementierungen austauschbar.
 
-- **Traditional Approach:**  
-  A class creates its own dependencies (e.g., a Logger) internally.
-  
-- **DI Approach:**  
-  Instead of instantiating its dependencies, a class receives them (typically via its constructor), so it only needs to use them without knowing how they were created.
-
-- **Inversion of Control (IoC):**  
-  DI is a form of IoC where the control of creating and managing dependencies is delegated to an external container or framework.
-
-## Key Concepts
-
-- **Dependency:**  
-  An object or service required by a class (e.g., Logger, Repository, Service).
-
-- **Injection:**  
-  Providing an external dependency to a class (commonly via constructor injection, but also property or method injection).
-
-- **Loose Coupling:**  
-  Classes depend on abstractions (interfaces) rather than concrete implementations, making the code more modular and testable.
-
-## Benefits of Dependency Injection
-
-1. **Improved Testability:**  
-   You can easily substitute dependencies with mocks or stubs during unit tests.
-   
-2. **Flexibility:**  
-   You can switch out implementations without modifying the dependent class.
-   
-3. **Centralized Configuration:**  
-   An IoC container can manage object creation and lifetimes, making configuration and maintenance easier.
-   
-4. **Cleaner Code:**  
-   By separating concerns, the code becomes more readable and maintainable.
-
-## Implementing Dependency Injection in .NET
-
-### Step 1: Define an Interface
+## Ohne DI: harte Kopplung
 
 ```csharp
-public interface ILogger
+public sealed class OrderService
 {
-    void Log(string message);
-}
-```
-### Step 2: Create a Concrete Implementation
-
-```csharp
-public class ConsoleLogger : ILogger
-{
-    public void Log(string message)
+    public async Task ProcessAsync(Order order)
     {
-        Console.WriteLine($"Log: {message}");
+        var repository = new SqlOrderRepository("production-connection");
+        var mailer = new SmtpMailer();
+
+        await repository.SaveAsync(order);
+        await mailer.SendConfirmationAsync(order.CustomerEmail);
     }
 }
 ```
 
-### Step 3: Use the Dependency in a Class
+Probleme:
+
+- Klasse entscheidet über Konfiguration und Lebenszyklus.
+- Unit-Test benötigt echte Datenbank und Mailserver oder invasive Tricks.
+- alternative Implementierung verändert fachlichen Code.
+- Abhängigkeiten sind am Konstruktor nicht erkennbar.
+
+## Mit Constructor Injection
 
 ```csharp
-public class OrderService
+public interface IOrderRepository
 {
-    private readonly ILogger _logger;
+    Task SaveAsync(Order order, CancellationToken cancellationToken);
+}
 
-    // Dependency is injected via the constructor
-    public OrderService(ILogger logger)
-    {
-        _logger = logger;
-    }
+public interface IConfirmationSender
+{
+    Task SendAsync(Order order, CancellationToken cancellationToken);
+}
 
-    public void ProcessOrder(int orderId)
+public sealed class OrderService(
+    IOrderRepository repository,
+    IConfirmationSender confirmationSender)
+{
+    public async Task ProcessAsync(
+        Order order,
+        CancellationToken cancellationToken)
     {
-        _logger.Log($"Processing order #{orderId}");
-        // Order processing logic...
+        await repository.SaveAsync(order, cancellationToken);
+        await confirmationSender.SendAsync(order, cancellationToken);
     }
 }
 ```
 
-### Step 4: Configure DI in a .NET Core Application
-In your Startup.cs (or Program.cs for .NET 5/6/7):
+Die Klasse beschreibt jetzt klar, was sie braucht. Sie entscheidet nicht, welche Datenbank oder welcher Mailanbieter verwendet wird.
+
+## Composition Root in `Program.cs`
+
 ```csharp
-public class Startup
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<IOrderRepository, SqlOrderRepository>();
+builder.Services.AddScoped<IConfirmationSender, SmtpConfirmationSender>();
+builder.Services.AddScoped<OrderService>();
+
+var app = builder.Build();
+app.Run();
+```
+
+Der Composition Root ist der zentrale Ort, an dem der Objektgraph verdrahtet wird. Fachklassen sollten den DI-Container nicht selbst abfragen.
+
+## Lebenszyklen
+
+| Lebenszyklus | Instanz | geeignet für |
+|---|---|---|
+| Transient | bei jeder Auflösung neu | leichte, zustandsarme Dienste |
+| Scoped | einmal pro Scope, in Web-Apps meist Request | Request-Kontext, typische Datenbank-Session |
+| Singleton | einmal für die Anwendung | thread-sichere, lang lebende Dienste ohne scoped Abhängigkeit |
+
+Ein längerer Lebenszyklus darf keine kürzer lebende Instanz festhalten. Ein Singleton, das direkt einen scoped `DbContext` erhält, ist daher ein Fehler im Lebenszyklusdesign.
+
+## Unit-Test ohne echten I/O
+
+```csharp
+public sealed class InMemoryOrderRepository : IOrderRepository
 {
-    public void ConfigureServices(IServiceCollection services)
+    public List<Order> Saved { get; } = [];
+
+    public Task SaveAsync(Order order, CancellationToken cancellationToken)
     {
-        // Register the interface and its concrete implementation
-        services.AddTransient<ILogger, ConsoleLogger>();
-        services.AddTransient<OrderService>();
-        
-        // Other service registrations...
+        Saved.Add(order);
+        return Task.CompletedTask;
     }
-    
-    // Configure method ...
+}
+
+[Fact]
+public async Task Process_saves_order()
+{
+    var repository = new InMemoryOrderRepository();
+    var sender = new RecordingConfirmationSender();
+    var service = new OrderService(repository, sender);
+    var order = new Order("order-123", "azubi@example.test");
+
+    await service.ProcessAsync(order, CancellationToken.None);
+
+    Assert.Contains(order, repository.Saved);
 }
 ```
 
-Now, whenever OrderService is requested, the DI container automatically injects an instance of ConsoleLogger for the ILogger dependency.
+Der Test kontrolliert die Grenzen. Ob für jede Abhängigkeit ein Mock nötig ist, hängt vom Design ab; kleine Fakes sind oft leichter zu verstehen.
 
-## Summary
--	Dependency Injection allows you to inject dependencies into classes, promoting loose coupling and making your code more maintainable and testable.
--	It helps centralize configuration and integrates seamlessly into the .NET Core DI container.
--	Using DI, you can focus on developing functionality without worrying about managing object creation and lifecycle.
+## Interfaces mit Bedacht
+
+Nicht jede Klasse braucht automatisch ein eigenes Interface. Eine Abstraktion lohnt sich besonders an Grenzen:
+
+- Netzwerk und APIs,
+- Dateisystem und Uhrzeit,
+- Datenbankzugriff,
+- Nachrichtensystem,
+- externe Identität oder Secret-Plattform.
+
+Ein Interface mit nur einer Implementierung kann trotzdem sinnvoll sein, wenn Tests oder Architekturgrenzen davon profitieren. Es ist aber kein Selbstzweck.
+
+## Häufige Fehler
+
+- **Service Locator:** Klasse erhält `IServiceProvider` und sucht versteckt beliebige Dienste.
+- **God Constructor:** sehr viele Parameter weisen auf zu viele Verantwortlichkeiten hin.
+- **Falscher Lifetime:** Singleton hält scoped oder nicht thread-sicheren Zustand.
+- **Konfiguration überall:** Fachcode liest globale Konfiguration statt typisierter Optionen.
+- **I/O im Konstruktor:** Objektaufbau führt Netzwerk- oder Datenbankaktionen aus.
+- **Container im Domain-Layer:** Fachlogik hängt direkt vom DI-Framework ab.
+
+## Verbindung zu SOLID
+
+DI unterstützt das Dependency-Inversion-Prinzip: High-Level-Logik hängt von geeigneten Abstraktionen, nicht von konkreten technischen Details. DI allein macht ein Design aber nicht automatisch sauber. Schlechte Grenzen bleiben schlechte Grenzen – nur konfigurierbarer.
+
+## Checkliste
+
+- [ ] Abhängigkeiten stehen im Konstruktor.
+- [ ] Composition Root enthält die Verdrahtung.
+- [ ] Lebenszyklen passen zu Zustand und Thread-Sicherheit.
+- [ ] Abstraktionen liegen an sinnvollen Grenzen.
+- [ ] Konstruktoren führen kein I/O aus.
+- [ ] Klassen können ohne globalen Zustand getestet werden.
+- [ ] Cancellation Tokens laufen durch asynchrone Grenzen.
+
+Weiter: [SOLID-Prinzipien](/concepts/solid-prinzipien), [Clean Architecture](/concepts/clean-architecture), [Singleton Pattern](/Singelton).
+
+**Primärquelle:** [.NET Dependency Injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection)

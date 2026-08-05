@@ -8,6 +8,10 @@ aside: false
 
 PowerShell wird dann richtig wertvoll, wenn aus einzelnen Befehlen nachvollziehbare, testbare und sicher ausführbare Werkzeuge werden.
 
+::: tip Lernpfad für Azubis
+[PowerShell-Grundlagen](../Basis-Powershell) → [Lab 3](../lernwerkstatt/lab-powershell) → [Fehlerbehandlung](./powershell-fehlerbehandlung) → [Tests mit Pester](./pester-testing).
+:::
+
 <div class="topic-grid">
   <a class="topic-card" href="../powershell-kurs"><span class="topic-card__icon">⚡</span><strong>PowerShell für DevOps</strong><span>Der umfangreiche Kurs als Einstieg in Automatisierung und Administration.</span></a>
   <a class="topic-card" href="./powershell-fehlerbehandlung"><span class="topic-card__icon">🧯</span><strong>Fehlerbehandlung & Logging</strong><span>Terminierende Fehler, try/catch/finally, strukturierte Logs und Exit Codes.</span></a>

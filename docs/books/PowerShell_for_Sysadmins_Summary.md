@@ -1,5 +1,23 @@
-# PowerShell for Sysadmins – Detailed Summary
+---
+title: "PowerShell for Sysadmins – Zusammenfassung"
+description: Praxisprojekte für Administration und Automatisierung mit PowerShell einordnen.
+learning:
+  level: Vertiefung
+  duration: 30–45 Minuten
+  goals:
+    - die Kernaussagen des Buchs strukturiert wiedergeben.
+    - Empfehlungen auf den eigenen Arbeitskontext übertragen.
+    - versionsabhängige Aussagen mit Primärdokumentation abgleichen.
+  terms: [PowerShell, Administration, Automation, Remoting]
+  practice: Wähle eine Empfehlung aus der Zusammenfassung, formuliere ihren erwarteten Nutzen und prüfe sie in einem kleinen Lab oder anhand eines bestehenden Teamprozesses.
+  next: /Basis-Powershell
+---
 
+# PowerShell for Sysadmins – Zusammenfassung
+
+::: info Einordnung für Azubis
+Diese Zusammenfassung verwendet teilweise englische Originalbegriffe. Nutze sie zur Orientierung, prüfe technische Details in aktueller Primärdokumentation und verbinde mindestens eine Erkenntnis mit einer eigenen Übung.
+:::
 **Author:** Adam Bertram  
 **Publisher:** No Starch Press  
 **First Published:** 2019  
@@ -8,7 +26,7 @@
 
 ---
 
-## Overview
+## Überblick
 
 “**PowerShell for Sysadmins: Workflow Automation Made Easy**” by Adam Bertram is a **hands-on, project-oriented introduction** to PowerShell for system administrators.  
 It teaches automation through real-world examples—how to replace manual, repetitive processes with efficient, reliable scripts.
@@ -18,7 +36,7 @@ It’s ideal for readers who want to *think like an automation engineer* and not
 
 ---
 
-## Key Themes
+## Kernthemen
 
 - Developing an **automation mindset** for IT operations  
 - Writing **modular, maintainable PowerShell scripts**  
@@ -28,7 +46,7 @@ It’s ideal for readers who want to *think like an automation engineer* and not
 
 ---
 
-## Chapter Overview
+## Kapitelüberblick
 
 ### **Chapter 1: Why Automate?**
 - Defines the concept and benefits of automation.  
@@ -108,7 +126,7 @@ It’s ideal for readers who want to *think like an automation engineer* and not
 
 ---
 
-## What You’ll Learn
+## Was du daraus lernen kannst
 
 - Automate **daily administration tasks** using PowerShell.  
 - Build **reusable modules** and **error-resilient scripts**.  
@@ -118,7 +136,7 @@ It’s ideal for readers who want to *think like an automation engineer* and not
 
 ---
 
-## Strengths
+## Stärken
 
 - Real-world, project-based teaching approach.  
 - Focuses on sustainable automation, not just one-off scripts.  
@@ -127,7 +145,7 @@ It’s ideal for readers who want to *think like an automation engineer* and not
 
 ---
 
-## Limitations
+## Grenzen
 
 - Assumes some basic familiarity with Windows administration.  
 - Doesn’t cover PowerShell Core features in depth.  
@@ -135,7 +153,7 @@ It’s ideal for readers who want to *think like an automation engineer* and not
 
 ---
 
-## Best Suited For
+## Geeignet für
 
 | Role | Benefit |
 |------|----------|
@@ -146,7 +164,7 @@ It’s ideal for readers who want to *think like an automation engineer* and not
 
 ---
 
-## TL;DR Summary
+## Kurzfassung
 
 | Topic | Key Takeaway |
 |--------|--------------|

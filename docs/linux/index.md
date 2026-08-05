@@ -8,6 +8,10 @@ aside: false
 
 Gute Linux-Administration ist weniger Magie als eine konsistente Diagnosekette: Zustand erfassen, Hypothese bilden, gezielt messen, kleine Änderung durchführen und Ergebnis verifizieren.
 
+::: tip Einstieg
+Lies zuerst [Dateisystem & Rechte](../grundlagen/dateisystem-rechte) sowie [Prozesse, Dienste & Ports](../grundlagen/prozesse-dienste-ports). Danach kannst du die Diagnose-Guides besser einordnen.
+:::
+
 <div class="topic-grid">
   <a class="topic-card" href="./netzwerkdiagnose"><span class="topic-card__icon">🌐</span><strong>Netzwerkdiagnose</strong><span>Von Interface und Route über DNS und Ports bis zum Paketmitschnitt.</span></a>
   <a class="topic-card" href="./systemd-troubleshooting"><span class="topic-card__icon">🩺</span><strong>systemd Troubleshooting</strong><span>Units, Abhängigkeiten, Journal und reproduzierbare Service-Diagnose.</span></a>

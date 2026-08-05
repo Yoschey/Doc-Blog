@@ -1,5 +1,23 @@
-# Python for DevOps – Detailed Summary
+---
+title: "Python for DevOps – Zusammenfassung"
+description: Python für Automation, APIs, Cloud und zuverlässigen Betrieb einordnen.
+learning:
+  level: Vertiefung
+  duration: 30–45 Minuten
+  goals:
+    - die Kernaussagen des Buchs strukturiert wiedergeben.
+    - Empfehlungen auf den eigenen Arbeitskontext übertragen.
+    - versionsabhängige Aussagen mit Primärdokumentation abgleichen.
+  terms: [Python, Automation, API, Cloud]
+  practice: Wähle eine Empfehlung aus der Zusammenfassung, formuliere ihren erwarteten Nutzen und prüfe sie in einem kleinen Lab oder anhand eines bestehenden Teamprozesses.
+  next: /grundlagen/ci-cd-grundlagen
+---
 
+# Python for DevOps – Zusammenfassung
+
+::: info Einordnung für Azubis
+Diese Zusammenfassung verwendet teilweise englische Originalbegriffe. Nutze sie zur Orientierung, prüfe technische Details in aktueller Primärdokumentation und verbinde mindestens eine Erkenntnis mit einer eigenen Übung.
+:::
 **Authors:** Noah Gift, Kennedy Behrman, Alfredo Deza, and Grig Gheorghiu  
 **Publisher:** O’Reilly Media  
 **First Published:** 2019  
@@ -8,7 +26,7 @@
 
 ---
 
-## Overview
+## Überblick
 
 “**Python for DevOps: Learn Ruthlessly Effective Automation**” teaches how to leverage Python as a unifying language for **infrastructure management, CI/CD, cloud orchestration, and monitoring**.  
 The book focuses on using Python to build practical, production-ready automation tools rather than abstract programming exercises.
@@ -18,7 +36,7 @@ Each chapter builds upon the previous one, progressing from simple scripts to fu
 
 ---
 
-## Core Themes
+## Kernthemen
 
 - Using **Python as a glue language** for DevOps workflows.  
 - Automating tasks: testing, deployment, monitoring, and infrastructure.  
@@ -29,7 +47,7 @@ Each chapter builds upon the previous one, progressing from simple scripts to fu
 
 ---
 
-## Structure and Chapter Breakdown
+## Aufbau und Kapitel
 
 ### **1. Introduction to DevOps with Python**
 - Defines the intersection of DevOps and Python.  
@@ -108,7 +126,7 @@ Each chapter builds upon the previous one, progressing from simple scripts to fu
 
 ---
 
-## What You’ll Learn
+## Was du daraus lernen kannst
 
 - How to **build automation tools and pipelines using Python**.  
 - Apply Python to **CI/CD, cloud management, and observability**.  
@@ -118,7 +136,7 @@ Each chapter builds upon the previous one, progressing from simple scripts to fu
 
 ---
 
-## Strengths
+## Stärken
 
 - Highly practical with full, working code examples.  
 - Shows how Python unifies DevOps tools and APIs.  
@@ -127,7 +145,7 @@ Each chapter builds upon the previous one, progressing from simple scripts to fu
 
 ---
 
-## Limitations
+## Grenzen
 
 - Some examples assume intermediate Python skills.  
 - Heavily cloud-focused — on-premise examples are fewer.  
@@ -135,7 +153,7 @@ Each chapter builds upon the previous one, progressing from simple scripts to fu
 
 ---
 
-## Ideal Readers
+## Geeignet für
 
 | Role | Benefit |
 |------|----------|
@@ -146,7 +164,7 @@ Each chapter builds upon the previous one, progressing from simple scripts to fu
 
 ---
 
-## TL;DR Summary
+## Kurzfassung
 
 | Topic | Key Takeaway |
 |--------|--------------|
